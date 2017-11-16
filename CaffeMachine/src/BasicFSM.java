@@ -13,7 +13,16 @@ public class BasicFSM {
 
 
 	public void transition(Action action) {
-		this.currentState = transitionTable.get(currentState).get(action);
+		Map<Action,State> nextState = new HashMap<Action, State>();
+		if(transitionTable.get(currentState) == null) {
+			return;
+		}
+		nextState = transitionTable.get(currentState);
+		
+		if(nextState.get(action) == null) {
+			return;
+		}
+		this.currentState = nextState.get(action);
 	}
 
 	public State getCurrentState() {
