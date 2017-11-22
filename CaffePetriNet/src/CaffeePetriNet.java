@@ -1,0 +1,92 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CaffeePetriNet extends PetriNet {
+
+	public CaffeePetriNet() {
+		super();
+		initialize();
+	}
+
+	private void initialize() {
+		Location coins0 = new Location(TypeOfLocation.ZERO_B, 1);
+		Location coins5 = new Location(TypeOfLocation.FIVE_B, 0);
+		Location coins10 = new Location(TypeOfLocation.TEN_B, 0);
+		Location coins15 = new Location(TypeOfLocation.FIFTEEN_B, 0);
+		Location coins20 = new Location(TypeOfLocation.TWENTY_B, 0);
+
+		List<Arch> archs1 = new ArrayList<>();
+		archs1.add(new Arch(1, coins0, Direction.IN));
+		archs1.add(new Arch(1, coins5, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_5B, archs1));
+
+		List<Arch> archs2 = new ArrayList<>();
+		archs2.add(new Arch(1, coins0, Direction.IN));
+		archs2.add(new Arch(1, coins10, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_10B, archs2));
+
+		List<Arch> archs3 = new ArrayList<>();
+		archs3.add(new Arch(1, coins5, Direction.IN));
+		archs3.add(new Arch(1, coins10, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_5B, archs3));
+
+		List<Arch> archs4 = new ArrayList<>();
+		archs4.add(new Arch(1, coins5, Direction.IN));
+		archs4.add(new Arch(1, coins15, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_10B, archs4));
+
+		List<Arch> archs5 = new ArrayList<>();
+		archs5.add(new Arch(1, coins10, Direction.IN));
+		archs5.add(new Arch(1, coins15, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_5B, archs5));
+
+		List<Arch> archs6 = new ArrayList<>();
+		archs6.add(new Arch(1, coins10, Direction.IN));
+		archs6.add(new Arch(1, coins20, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_10B, archs6));
+
+		List<Arch> archs7 = new ArrayList<>();
+		archs7.add(new Arch(1, coins15, Direction.IN));
+		archs7.add(new Arch(1, coins20, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.INSERT_COIN_5B, archs7));
+
+		List<Arch> archs8 = new ArrayList<>();
+		archs8.add(new Arch(1, coins20, Direction.IN));
+		archs8.add(new Arch(1, coins10, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.TAKE_10B_CAFFEE, archs8));
+
+		List<Arch> archs9 = new ArrayList<>();
+		archs9.add(new Arch(1, coins20, Direction.IN));
+		archs9.add(new Arch(1, coins5, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.TAKE_15B_CAFFEE, archs9));
+
+		List<Arch> archs10 = new ArrayList<>();
+		archs10.add(new Arch(1, coins15, Direction.IN));
+		archs10.add(new Arch(1, coins5, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.TAKE_10B_CAFFEE, archs10));
+
+		List<Arch> archs11 = new ArrayList<>();
+		archs11.add(new Arch(1, coins15, Direction.IN));
+		archs11.add(new Arch(1, coins0, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.TAKE_15B_CAFFEE, archs11));
+
+		List<Arch> archs12 = new ArrayList<>();
+		archs12.add(new Arch(1, coins10, Direction.IN));
+		archs12.add(new Arch(1, coins0, Direction.OUT));
+
+		transitions.add(new Transition(TypeOfTransition.TAKE_10B_CAFFEE, archs12));
+
+	}
+
+}

@@ -1,0 +1,4 @@
+
+public enum TypeOfTransition {
+	INSERT_COIN_5B,INSERT_COIN_10B,TAKE_10B_CAFFEE,TAKE_15B_CAFFEE
+}
