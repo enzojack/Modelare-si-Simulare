@@ -2,10 +2,10 @@ import java.util.List;
 
 public class Transition {
 
-	private TypeOfTransition tag;
+	private int tag;
 	private List<Arch> archs;
 	
-	public Transition(TypeOfTransition tag, List<Arch> archs) {
+	public Transition(int tag, List<Arch> archs) {
 		super();
 		this.tag = tag;
 		this.archs = archs;
@@ -20,8 +20,8 @@ public class Transition {
 		return true;
 	}
 
-	public boolean hasSameName(TypeOfTransition theTransition) {
-		if(tag.equals(theTransition)) {
+	public boolean hasSameName(int theTransition) {
+		if(tag == theTransition) {
 			return true;
 		}
 		return false;

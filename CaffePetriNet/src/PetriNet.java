@@ -9,7 +9,7 @@ public class PetriNet {
 
 	}
 
-	public void exec(TypeOfTransition theTransition) {
+	public void exec(int theTransition) {
 		List<Transition> possibleTransition = new ArrayList<>();
 		for (Transition transition : transitions) {
 			if (transition.hasSameName(theTransition))

@@ -7,3 +7,5 @@
 /Transition.class
 /TypeOfLocation.class
 /TypeOfTransition.class
+/ProducerConsumerPetriNet.class
+/ReaderWriterPetriNet.class
